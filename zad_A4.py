@@ -1,8 +1,4 @@
 #!/usr/bin/env python3
-"""
-Zadanie A4: Mini-system plików (Pathlib + Dataclass + JSON)
-Przechodzi rekurencyjnie po katalogu i zapisuje informacje o plikach do JSON.
-"""
 
 import sys
 import json
@@ -12,16 +8,12 @@ from dataclasses import dataclass, asdict
 
 @dataclass
 class FileInfo:
-    """Reprezentacja informacji o pliku."""
     path: str
     size: int
     suffix: str
 
 
 def scan_directory(base_path: Path) -> list[FileInfo]:
-    """
-    Rekurencyjnie przechodzi po katalogu i zbiera informacje o plikach.
-    """
     files = []
     
     try:
@@ -59,7 +51,6 @@ def main():
     
     base_path = Path(directory)
     
-    # Sprawdź czy katalog istnieje
     if not base_path.exists():
         print(f"Błąd: Katalog '{directory}' nie istnieje.", file=sys.stderr)
         sys.exit(1)
@@ -68,13 +59,10 @@ def main():
         print(f"Błąd: '{directory}' nie jest katalogiem.", file=sys.stderr)
         sys.exit(1)
     
-    # Skanuj katalog
     files = scan_directory(base_path)
     
-    # Konwertuj do listy słowników
     files_data = [asdict(f) for f in files]
     
-    # Zapisz do JSON
     try:
         with open(output_file, 'w', encoding='utf-8') as f:
             json.dump(files_data, f, indent=2, ensure_ascii=False)
