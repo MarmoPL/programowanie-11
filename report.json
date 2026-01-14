@@ -1,0 +1,12 @@
+[
+  {
+    "path": "b.bin",
+    "size": 5,
+    "suffix": ".bin"
+  },
+  {
+    "path": "a.txt",
+    "size": 3,
+    "suffix": ".txt"
+  }
+]

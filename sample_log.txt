@@ -1,0 +1,5 @@
+# demo log
+User Alice logged in
+User Bob logged in
+User Alice logged out
+Alice error timeout
