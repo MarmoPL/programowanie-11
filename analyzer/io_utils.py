@@ -1,25 +1,7 @@
-"""
-Moduł io_utils - funkcje wejścia/wyjścia dla pakietu analyzer.
-"""
-
 from typing import Iterator
 
 
 def read_numbers(path: str) -> list[float]:
-    """
-    Wczytuje liczby z pliku tekstowego (jedna liczba na linię).
-    
-    Args:
-        path: Ścieżka do pliku z liczbami.
-        
-    Returns:
-        Lista liczb wczytanych z pliku.
-        
-    Raises:
-        FileNotFoundError: Gdy plik nie istnieje.
-        ValueError: Gdy plik zawiera niepoprawne dane.
-        PermissionError: Gdy brak uprawnień do odczytu.
-    """
     numbers = []
     
     try:
@@ -27,7 +9,6 @@ def read_numbers(path: str) -> list[float]:
             for line_num, line in enumerate(f, 1):
                 line = line.strip()
                 
-                # Ignoruj puste linie
                 if not line:
                     continue
                 
