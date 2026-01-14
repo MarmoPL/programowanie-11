@@ -1,17 +1,13 @@
-#!/usr/bin/env python3
-
 import sys
 import json
 from pathlib import Path
 from dataclasses import dataclass, asdict
-
 
 @dataclass
 class FileInfo:
     path: str
     size: int
     suffix: str
-
 
 def scan_directory(base_path: Path) -> list[FileInfo]:
     files = []
