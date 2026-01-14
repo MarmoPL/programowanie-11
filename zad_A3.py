@@ -1,15 +1,11 @@
-#!/usr/bin/env python3
-
 import json
 import itertools
-
 
 def divisible_by_3_and_4():
     for n in itertools.count(0):
         if n % 3 == 0 and n % 4 == 0:
             yield n
-
-
+        
 def main():
     try:
         n = int(input())
