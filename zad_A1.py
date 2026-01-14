@@ -1,19 +1,8 @@
-#!/usr/bin/env python3
-"""
-Zadanie A1: Analiza logów tekstowych
-Analizuje logi zapisane w pliku tekstowym i wypisuje 3 najczęściej występujące słowa.
-"""
-
 import sys
 from collections import Counter
 
 
 def analyze_logs(file_path: str) -> Counter:
-    """
-    Wczytuje plik z logami i liczy częstość występowania słów.
-    Pomija puste linie i linie zaczynające się od #.
-    Słowa są traktowane nieczule na wielkość liter.
-    """
     word_counter = Counter()
     
     try:
@@ -47,7 +36,6 @@ def main():
     file_path = sys.argv[1]
     word_counter = analyze_logs(file_path)
     
-    # Wypisujemy 3 najczęściej występujące słowa
     for word, count in word_counter.most_common(3):
         print(f"{word} {count}")
 
